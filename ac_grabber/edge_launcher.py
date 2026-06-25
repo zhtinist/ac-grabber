@@ -159,7 +159,7 @@ def ensure_edge_debug(
         log("Edge 就绪 — 可在其他标签页继续工作, 抢稿在稿池页后台进行")
         return True
 
-    log("等待 Edge 调试端口超时, 请手动运行 start_edge_debug.bat")
+    log("等待 Edge 调试端口超时, 请手动运行 start-edge.bat")
     return False
 
 

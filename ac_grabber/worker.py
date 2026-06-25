@@ -77,7 +77,9 @@ class GrabWorker:
         interval = float(self.cfg.get("refresh_interval", 1.0))
         max_count = int(self.cfg.get("max_grab_count", 0))
         publishers = set(self.cfg.get("publishers", []))
-        owner = self.cfg.get("owner_name", "朱昊天")
+        owner = self.cfg.get("owner_name", "")
+        if not owner:
+            self.log("提示: 未设置定制稿归属名, 将只抢普通稿(末尾无括号)")
 
         if not publishers:
             self.log("请至少选择一个公众号")

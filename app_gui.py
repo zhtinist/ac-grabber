@@ -1,7 +1,4 @@
-"""
-AI Copywriter 抢稿助手 — GUI
-作者: 朱昊天
-"""
+"""AC Grabber — AI Copywriter 抢稿助手 GUI"""
 
 import sys
 import asyncio
@@ -50,7 +47,7 @@ class ToggleButton(tk.Button):
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AI Copywriter 抢稿助手 — 朱昊天")
+        self.title("AC Grabber — AI Copywriter 抢稿助手")
         self.geometry("720x620")
         self.minsize(640, 520)
 
@@ -105,7 +102,7 @@ class App(tk.Tk):
         row1 = ttk.Frame(frm_cfg)
         row1.pack(fill=tk.X, padx=8, pady=6)
         ttk.Label(row1, text="定制稿归属名:").pack(side=tk.LEFT)
-        self.var_owner = tk.StringVar(value=self.cfg.get("owner_name", "朱昊天"))
+        self.var_owner = tk.StringVar(value=self.cfg.get("owner_name", ""))
         ttk.Entry(row1, textvariable=self.var_owner, width=12).pack(side=tk.LEFT, padx=6)
         ttk.Label(row1, text="(仅标题末尾括号内为此名字的可抢)").pack(side=tk.LEFT)
 
@@ -161,7 +158,7 @@ class App(tk.Tk):
         except ValueError:
             max_grab = 0
         return {
-            "owner_name": self.var_owner.get().strip() or "朱昊天",
+            "owner_name": self.var_owner.get().strip(),
             "publishers": pubs,
             "max_grab_count": max(0, max_grab),
             "refresh_interval": max(0.5, interval),

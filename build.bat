@@ -3,7 +3,7 @@ chcp 936 >nul
 cd /d "%~dp0"
 
 echo ============================================================
-echo  打包 AI Copywriter 抢稿助手
+echo  打包 AC Grabber GUI
 echo ============================================================
 echo.
 
@@ -12,16 +12,16 @@ pip install playwright -q
 
 echo 正在打包...
 pyinstaller --noconfirm --onefile --windowed ^
-  --name "AC抢稿助手" ^
-  --add-data "start_edge_debug.bat;." ^
+  --name "ac-grabber-gui" ^
+  --add-data "start-edge.bat;." ^
   app_gui.py
 
-if exist "dist\AC抢稿助手.exe" (
-    copy /y "start_edge_debug.bat" "dist\" >nul
+if exist "dist\ac-grabber-gui.exe" (
+    copy /y "start-edge.bat" "dist\" >nul
     echo.
     echo 完成! 输出目录: dist\
-    echo   - AC抢稿助手.exe
-    echo   - start_edge_debug.bat
+    echo   - ac-grabber-gui.exe
+    echo   - start-edge.bat
 ) else (
     echo 打包失败
 )

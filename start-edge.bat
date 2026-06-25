@@ -3,13 +3,13 @@ chcp 936 >nul
 cd /d "%~dp0"
 
 echo ============================================================
-echo  以调试模式启动 Edge (使用你的现有配置和登录状态)
+echo  AC Grabber - 以调试模式启动 Edge
 echo ============================================================
 echo.
 echo 说明:
-echo   - 使用你平时的 Edge 账号、Cookie、书签 (不会另开空白配置)
+echo   - 使用你平时的 Edge 账号、Cookie、书签
 echo   - 若 Edge 正在运行, 请先关闭所有 Edge 窗口再运行本脚本
-echo   - 启动后可开其他标签页工作, 抢稿脚本只操作稿池页
+echo   - 启动后可开其他标签页, 抢稿脚本只操作稿池页
 echo.
 pause
 
@@ -33,11 +33,10 @@ echo 关闭旧 Edge...
 taskkill /IM msedge.exe /F >nul 2>&1
 timeout /t 2 /nobreak >nul
 
-echo 启动 Edge (调试端口 9222, 你的现有配置)...
+echo 启动 Edge (调试端口 9222)...
 start "" "%EDGE_EXE%" --remote-debugging-port=9222 --user-data-dir="%USER_DATA%" "https://ai-copywriter.risevideo.ai/distribute"
 
 echo.
-echo Edge 已启动。确认稿池页已登录后, 运行 run.bat
-echo 之后可在 Edge 其他标签页继续工作
+echo Edge 已启动。确认稿池页已登录后, 运行 run-cli.bat
 echo.
 pause

@@ -4,6 +4,8 @@ import json
 import sys
 from pathlib import Path
 
+START_EDGE_BAT = "start-edge.bat"
+
 # 页面上可选的公众号
 ALL_PUBLISHERS = [
     "小金AI新科技",
@@ -16,7 +18,7 @@ ALL_PUBLISHERS = [
 
 # 内部默认（一般不用改，可在 config.json 里用英文键覆盖）
 DEFAULTS = {
-    "owner_name": "朱昊天",
+    "owner_name": "",
     "publishers": ["小金AI新科技", "康健求真"],
     "max_grab_count": 8,
     "refresh_interval": 0.3,
@@ -44,10 +46,10 @@ def ensure_edge_bat():
     """打包后首次运行, 将 bat 释放到 exe 同目录"""
     if not getattr(sys, "frozen", False):
         return
-    dest = app_dir() / "start_edge_debug.bat"
+    dest = app_dir() / START_EDGE_BAT
     if dest.exists():
         return
-    src = Path(sys._MEIPASS) / "start_edge_debug.bat"  # type: ignore[attr-defined]
+    src = Path(sys._MEIPASS) / START_EDGE_BAT  # type: ignore[attr-defined]
     if src.exists():
         import shutil
         shutil.copy2(src, dest)
@@ -101,7 +103,7 @@ def save_config(cfg: dict):
             data = {}
 
     if "_说明" not in data:
-        data["_说明"] = "改下面四项后保存, 重新运行 run.bat 生效"
+        data["_说明"] = "改下面四项后保存, 重新运行 run-cli.bat 生效"
     if "_可选公众号" not in data:
         data["_可选公众号"] = list(ALL_PUBLISHERS)
 
