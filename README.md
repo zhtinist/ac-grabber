@@ -111,3 +111,7 @@ build.bat
 ## 许可
 
 仅供学习与个人使用，请遵守目标网站服务条款。
+
+## Author
+
+[朱昊天 (zhtinist)](https://github.com/zhtinist)
