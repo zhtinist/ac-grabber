@@ -76,7 +76,7 @@ python app_gui.py
 | `(someone else's name)` | Someone else's custom submission, skipped |
 | `(9)` or other non-Chinese-character content | Claimable |
 
-Parentheses at the start or in the middle of a title (such as 「（横屏）」, "landscape") do not affect the decision.
+Parentheses at the start or in the middle of a title (such as 「（横屏）」 (Landscape)) do not affect the decision.
 
 ## Configuration
 
@@ -84,12 +84,19 @@ Edit `config.json`. The keys are in Chinese and must stay as they are:
 
 | Key | Description |
 |------|------|
-| `人名` | Name for custom submissions; must match the name in the parentheses at the end of the title |
-| `抢稿上限` | Maximum number of claims; `0` = unlimited |
-| `刷新间隔` | Refresh interval in seconds; default `0.3`, minimum `0.1` |
-| `目标公众号` | Array of target Official Accounts; names must exactly match the tags on the page |
+| `人名` (Name) | Name for custom submissions; must match the name in the parentheses at the end of the title |
+| `抢稿上限` (Claim Limit) | Maximum number of claims; `0` = unlimited |
+| `刷新间隔` (Refresh Interval) | Refresh interval in seconds; default `0.3`, minimum `0.1` |
+| `目标公众号` (Target Official Accounts) | Array of target Official Accounts; names must exactly match the tags on the page |
 
-Available Official Accounts: `小金AI新科技`, `康健求真`, `大宝说创业`, `AI壹号`, `秦刚·个人IP`, `秦刚头条`
+Available Official Accounts:
+
+- `小金AI新科技` (Xiaojin AI Tech)
+- `康健求真` (Health Truth-Seeking)
+- `大宝说创业` (Dabao on Startups)
+- `AI壹号` (AI No. 1)
+- `秦刚·个人IP` (Qin Gang · Personal Brand)
+- `秦刚头条` (Qin Gang Headlines)
 
 ## Packaging
 
